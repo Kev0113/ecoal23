@@ -29,8 +29,17 @@ Route::group([
     Route::get('/user',  function (Request $request) {
                                 return $request->user();
                          });
-    
 });
 
+// All Articles
+Route::get('/articles', function() {
+    return \App\Models\Article::all();
+});
+
+
+// One Articles
+Route::get('/articles/{id}', function($id) {
+    return \App\Models\Article::FindOrFail($id);
+});
 
 
