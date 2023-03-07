@@ -31,5 +31,15 @@ Route::group([
                          });
 });
 
+// All Articles
+Route::get('/articles', function() {
+    return \App\Models\Article::all();
+});
+
+
+// One Articles
+Route::get('/articles/{id}', function($id) {
+    return \App\Models\Article::FindOrFail($id);
+});
 
 
