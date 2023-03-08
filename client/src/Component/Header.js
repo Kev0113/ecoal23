@@ -4,15 +4,30 @@ import logo from '../logo.png';
 import '../css/header.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
+import Articles from "./Articles";
 
 import Register from "./Register";
 import Login from "./Login";
 import Home from "./Home";
 
-function Header({ cookies, removeCookie }) {
+function Header({ cookies, removeCookie, handleSearchChange , searchTerm}) {
     const [isLoggedIn, setIsLoggedIn] = useState(cookies.mycookie !== undefined);
     const [showSearch, setShowSearch] = useState(false);
+
+
+
     const name = cookies.mycookie ? cookies.mycookie.name : null;
+
+    // const handleSearchChange = (event) => {
+    //     setSearchTerm(event.target.value);
+    // };
+
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        // Do something with the search term, e.g. redirect to a search results page
+    };
+
+
 
     const handleSearchClick = () => {
         setShowSearch(!showSearch);
@@ -46,7 +61,7 @@ function Header({ cookies, removeCookie }) {
                         <Link to="/articles" className="nav-link">Articles</Link>
                         <span className="divide">|</span>
                         {/* a button to search */}
-                        <button style={{background:"none", border: "none"}} className="nav-link" onClick={handleSearchClick}>Search</button>
+                        <button style={{ background: "none", border: "none" }} className="nav-link" onClick={handleSearchClick}>Search</button>
                         <span className="divide">|</span>
                         {isLoggedIn ? (
                             <>
@@ -68,9 +83,14 @@ function Header({ cookies, removeCookie }) {
                     </Nav>
                     {showSearch && (
                         <div className="search-bar">
-                            <input type="text" placeholder="Search..." />
+                            <form onSubmit={handleSearchSubmit}>
+                                <input type="text" placeholder="Search Articles Here......" value={searchTerm} onChange={handleSearchChange} />
+
+                                <button type="submit">Search</button>
+                            </form>
                         </div>
                     )}
+
                 </Container>
             </Navbar>
         </>
