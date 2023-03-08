@@ -28,17 +28,18 @@ Route::group([
     Route::get('/logout',  [AuthController::class, 'logout']);
 
     Route::get('/user',  function (Request $request) {
-                                return $request->user();
-                         });
+        return $request->user();
+    });
 
-
-    Route::get('/api/articles', [ArticleController::class, 'add']);
+    Route::post('/articles/add', [ArticleController::class, 'add']);
+    
 });
 
 // All Articles
 Route::get('/articles', function() {
     return \App\Models\Article::all();
 });
+
 
 
 // One Articles
