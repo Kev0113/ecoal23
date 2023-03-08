@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React from "react";
+import { Route, Link, Routes } from "react-router-dom";
 import './App.css';
+import { useCookies } from 'react-cookie';
+
+import Header from "./Component/Header";
+import Register from "./Component/Register";
+import Login from "./Component/Login";
+import Home from "./Component/Home";
+import Footer from "./Component/Footer";
 
 function App() {
+  const [cookies, setCookie, removeCookie] = useCookies(['mycookie']);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Header cookies={cookies} removeCookie={removeCookie} />
+
+
+      <Routes>
+        <Route exact={true} path="/" element={<Home cookies={cookies} />} />
+        <Route exact={true} path="/register" element={<Register/>} />
+        <Route exact={true} path="/login" element={<Login cookies={cookies} setCookie={setCookie} />} />
+        <Route path="*" element={() => <p>Page Not Found</p>} />
+      </Routes>
+
+      <Footer />
     </div>
   );
 }
+
 
 export default App;

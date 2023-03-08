@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,62 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.brand{
+  background-color: #FAF2E6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 2rem; */
+  color: black;
+}
+
+.brand-logo {
+  font-size: 3rem; /* Increase font size */
+  display: flex; /* Use flexbox to center logo and text */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  text-align: center; /* Center text */
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+
+.brand-logo img {
+  margin-right: 1rem; /* Add spacing between logo and text */
+  height: 4rem; /* Increase logo size */
+}
+
+.navbar-dark .navbar-brand {
+  color: black;
+}
+
+/* .divide{
+  font: 56px;
+  color:#FAF2E6;
+} */
+
+.me-auto {
+  display: flex;
+  align-items: center;
+}
+
+.divide {
+  font-size: 20px;
+  color: #faf2e6;
+  /* margin: 0 10px; */
+  padding: 0;
 }
