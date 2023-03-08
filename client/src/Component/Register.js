@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Navigate, Link } from "react-router-dom";
 import axios from "axios";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-
 import LinkInClass from "./LinkInClass";
 
 import "../css/register.css";
