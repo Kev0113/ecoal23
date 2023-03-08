@@ -27,8 +27,9 @@ class AuthController extends Controller
     $token = $user->createToken('auth_token')->plainTextToken;
 
     return response()->json([
-                   'access_token' => $token,
-                   'token_type' => 'Bearer',
+                    'name' => $user->name,
+                    'access_token' => $token,
+                    'token_type' => 'Bearer',
     ]);
     }
 
@@ -37,8 +38,8 @@ class AuthController extends Controller
     $validatedData = $request->validate([
             'email' => 'required|string|email|max:255',
             'password' => 'required|string',
-    ]);        
-    
+    ]);
+
     if (!Auth::attempt($request->only('email', 'password'))) {
         return response()->json(['message' => 'Invalid login details'], 401);
     }
