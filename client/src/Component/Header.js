@@ -27,7 +27,7 @@ function Header({ cookies, removeCookie }) {
         <>
             <Navbar className="brand" variant="dark">
                 <Container className="justify-content-center">
-                    <Navbar.Brand className="brand-logo" href="/">
+                    <Navbar.Brand className="brand-logo fw-bold" href="/">
                         <img
                             alt="logo"
                             src={logo}
@@ -40,29 +40,29 @@ function Header({ cookies, removeCookie }) {
 
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Nav className="me-auto">
-                        <Link to="/" className="nav-link">Home</Link>
+                    <Nav className="me-auto fw-bold">
+                        <Link to="/" className="menu-item">Home</Link>
                         <span className="divide">|</span>
-                        <Link to="/articles" className="nav-link">Articles</Link>
+                        <Link to="/articles" className="menu-item">Articles</Link>
                         <span className="divide">|</span>
                         {/* a button to search */}
-                        <button style={{background:"none", border: "none"}} className="nav-link" onClick={handleSearchClick}>Search</button>
+                        <button style={{background:"none", border: "none"}} className="menu-item fw-bold" onClick={handleSearchClick}>Search</button>
                         <span className="divide">|</span>
                         {isLoggedIn ? (
                             <>
                                 {cookies.mycookie && (
                                     <>
-                                        <span className="nav-link">Welcome, {name}</span>
+                                        <span className="menu-item">Welcome, {name}</span>
                                         <span className="divide">|</span>
-                                        <Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link>
+                                        <Link to="/" className="menu-item" onClick={handleLogout}>Logout</Link>
                                     </>
                                 )}
                             </>
                         ) : (
                             <>
-                                <Link to="/register" className="nav-link">Register</Link>
+                                <Link to="/register" className="menu-item">Register</Link>
                                 <span className="divide">|</span>
-                                <Link to="/login" className="nav-link">Login</Link>
+                                <Link to="/login" className="menu-item">Login</Link>
                             </>
                         )}
                     </Nav>
