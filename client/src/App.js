@@ -15,6 +15,7 @@ function App() {
 
   return (
     <div className="wrapper">
+      <center>
       <Header cookies={cookies} removeCookie={removeCookie} />
 
 
@@ -27,6 +28,7 @@ function App() {
       </Routes>
 
       <Footer />
+      </center>
     </div>
   );
 }

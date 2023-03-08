@@ -37,6 +37,17 @@
   }
 } */
 
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p {
+  font-weight: bold;
+}
 
 .wrapper {
   min-height: 100vh;
