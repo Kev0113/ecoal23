@@ -11,9 +11,12 @@ import Home from "./Home";
 
 function Header({ cookies, removeCookie }) {
     const [isLoggedIn, setIsLoggedIn] = useState(cookies.mycookie !== undefined);
-    console.log(cookies.mycookie)
-    // to get the name of the user from the cookie
+    const [showSearch, setShowSearch] = useState(false);
     const name = cookies.mycookie ? cookies.mycookie.name : null;
+
+    const handleSearchClick = () => {
+        setShowSearch(!showSearch);
+    };
 
     const handleLogout = () => {
         setIsLoggedIn(false);
@@ -40,9 +43,10 @@ function Header({ cookies, removeCookie }) {
                     <Nav className="me-auto">
                         <Link to="/" className="nav-link">Home</Link>
                         <span className="divide">|</span>
-                        <Link to="/news" className="nav-link">News</Link>
+                        <Link to="/articles" className="nav-link">Articles</Link>
                         <span className="divide">|</span>
-                        <Link to="/search" className="nav-link">Search</Link>
+                        {/* a button to search */}
+                        <button style={{background:"none", border: "none"}} className="nav-link" onClick={handleSearchClick}>Search</button>
                         <span className="divide">|</span>
                         {isLoggedIn ? (
                             <>
@@ -62,6 +66,11 @@ function Header({ cookies, removeCookie }) {
                             </>
                         )}
                     </Nav>
+                    {showSearch && (
+                        <div className="search-bar">
+                            <input type="text" placeholder="Search..." />
+                        </div>
+                    )}
                 </Container>
             </Navbar>
         </>

@@ -8,6 +8,7 @@ import Register from "./Component/Register";
 import Login from "./Component/Login";
 import Home from "./Component/Home";
 import Footer from "./Component/Footer";
+import Articles from "./Component/Articles";
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['mycookie']);
@@ -21,6 +22,7 @@ function App() {
         <Route exact={true} path="/" element={<Home cookies={cookies} />} />
         <Route exact={true} path="/register" element={<Register/>} />
         <Route exact={true} path="/login" element={<Login cookies={cookies} setCookie={setCookie} />} />
+        <Route exact={true} path="/articles" element={<Articles cookies={cookies} />} />
         <Route path="*" element={() => <p>Page Not Found</p>} />
       </Routes>
 
