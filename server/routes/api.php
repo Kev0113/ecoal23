@@ -40,13 +40,14 @@ Route::group([
 //*************************** Edit Articles****************************************
     Route::post('/articles/edit/{id}', [ArticleController::class, 'edit']);
 
-
 });
 
 // All Articles
 Route::get('/articles', function() {
     return \App\Models\Article::all();
 });
+
+Route::get('/settings/{id}', [AuthController::class, 'getUser']);
 
 
 // One Articles
@@ -55,5 +56,7 @@ Route::get('/articles/{id}', function($id) {
 });
 
 
+Route::post('/settings/{userId}', [AuthController::class, 'edit']);
 
+Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
 
