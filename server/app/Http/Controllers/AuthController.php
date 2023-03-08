@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use  App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -76,9 +75,15 @@ class AuthController extends Controller
 
         $user = User::findOrFail($userId);
 
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password'));
+        if($request->input('title') == ! NULL ){
+            $user->name = $request->input('name');
+        }
+        if($request->input('email') == ! NULL ){
+            $user->email = $request->input('email');
+        }
+        if($request->input('password') == ! NULL ){
+            $user->password = Hash::make($request->input('password'));
+        }
 
         $user->save();
 
@@ -86,4 +91,9 @@ class AuthController extends Controller
     }
 
 
+
+    public function getUser($userId){
+        $getUser = User::findOrFail($userId);
+        return $getUser;
+    }
 }
