@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,17 @@ Route::group([
     Route::get('/user',  function (Request $request) {
                                 return $request->user();
                          });
+
+//***************************** Add Articles ***************************************
+    Route::post('/articles/add', [ArticleController::class, 'add']);
+
+//*************************** Delete Articles **************************************
+    Route::get('/articles/delete/{id}', [ArticleController::class, 'delete']);
+
+//*************************** Edit Articles****************************************
+    Route::post('/articles/edit/{id}', [ArticleController::class, 'edit']);
+
+
 });
 
 // All Articles
@@ -41,5 +53,7 @@ Route::get('/articles', function() {
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
 });
+
+
 
 
