@@ -21,7 +21,12 @@ function App() {
 
   return (
     <div className="wrapper">
+<<<<<<< HEAD
       <Header cookies={cookies} removeCookie={removeCookie} handleSearchChange={handleSearchChange} searchTerm={searchTerm} />
+=======
+      <center>
+      <Header cookies={cookies} removeCookie={removeCookie} />
+>>>>>>> 2f2408ff9c6eedcd7a4ce000b057982daad6faf0
 
 
       <Routes>
@@ -34,6 +39,7 @@ function App() {
       </Routes>
 
       <Footer />
+      </center>
     </div>
   );
 }
