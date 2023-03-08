@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use  App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-use  App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 class AuthController extends Controller
@@ -59,4 +60,30 @@ class AuthController extends Controller
         Auth::user()->tokens()->delete();
         return response()->json(["message" => "Logout."]);
     }
+
+
+    public function edit(Request $request, $userId){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+        ]);
+
+        if($validator->fails()){
+            return response ("problem", 400)
+            ->header('Content-Type', 'text/plain');
+        }
+
+        $user = User::findOrFail($userId);
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+
+        $user->save();
+
+        return $user;
+    }
+
+
 }

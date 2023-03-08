@@ -49,11 +49,12 @@ Route::get('/articles', function() {
 });
 
 
+
+
 // One Articles
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
 });
 
-
-
+Route::post('/settings/{userId}', [AuthController::class, 'edit']);
 
