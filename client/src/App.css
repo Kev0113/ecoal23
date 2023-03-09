@@ -37,6 +37,16 @@
   }
 } */
 
+@font-face {
+  font-family: Mugglenews;
+  src: url("fonts/Mugglenews.ttf");
+}
+
+@font-face {
+  font-family: OldNewspaperTypes;
+  src: url("fonts/OldNewspaperTypes.ttf");
+}
+
 * {
   font-family: 'Times New Roman', Times, serif;
 }
