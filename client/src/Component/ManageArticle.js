@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { Container, Table, Button } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function ManageArticle() {
   const [articles, setArticles] = useState([]);
@@ -22,7 +23,7 @@ function ManageArticle() {
   }, []);
 
   const filteredArticles = articles.filter(article => {
-    return article.email === cookies.mycookie.email;
+    return article.user_email === cookies.mycookie.email;
   });
 
   const handleDelete = async (id) => {
@@ -66,9 +67,9 @@ function ManageArticle() {
               <td>{article.createdAt}</td>
               <td>{article.updatedAt}</td>
               <td>
-                <Button variant="primary" href={`/edit/${article.id}`}>
-                  Edit
-                </Button>
+                <Link to={`/edit-article/${article.id}`}>
+                  <Button variant="primary">Edit</Button>
+                </Link>
               </td>
               <td>
                 <Button

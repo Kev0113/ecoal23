@@ -39,7 +39,7 @@ function App() {
         <Route path="/delete-account" element={<DeleteAccount cookies={cookies} removeCookie={removeCookie} />} />
         <Route path="/add-article" element={<AddArticle cookies={cookies} />} />
         <Route path="/manage-article" element={<ManageArticle cookies={cookies} />} />
-        <Route path="/edit-article/:id" element={<EditArticle/>} />
+        <Route path="/edit-article/:id" element={<EditArticle cookies={cookies}/>} />
         <Route path="*" element={() => <p>Page Not Found</p>} />
       </Routes>
 

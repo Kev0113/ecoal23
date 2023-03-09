@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 function EditArticle({ match }) {
   const [title, setTitle] = useState("");
@@ -9,12 +11,20 @@ function EditArticle({ match }) {
   const [mediaType, setMediaType] = useState("");
   const [mediaURL, setMediaURL] = useState("");
   const [leadStory, setLeadStory] = useState("");
+  const [cookies] = useCookies(['mycookie']);
+  const { id } = useParams();
+  const [user_email, setEmail] = useState(cookies.mycookie.email);
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(
-        `http://127.0.0.1:8000/api/articles/${match.params.id}`,
+      const token = cookies.mycookie.token;
+      const response = await axios.post(
+        `http://127.0.0.1:8000/api/articles/edit/${id}`
+        ,
         {
           title,
           content,
@@ -22,6 +32,10 @@ function EditArticle({ match }) {
           mediaType,
           mediaURL,
           leadStory,
+          user_email,
+        },
+        {
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
       console.log(response.data);
@@ -34,7 +48,7 @@ function EditArticle({ match }) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/articles/${match.params.id}`
+          `http://127.0.0.1:8000/api/articles/${id}`
         );
         setTitle(response.data.title);
         setContent(response.data.content);
@@ -47,7 +61,7 @@ function EditArticle({ match }) {
       }
     };
     fetchData();
-  }, [match.params.id]);
+  }, [id]);
 
   return (
     <Container className="my-5">
@@ -84,30 +98,30 @@ function EditArticle({ match }) {
             type="text"
             value={mediaType}
             onChange={(e) => setMediaType(e.target.value)}
-            />
+          />
         </Form.Group>
         <Form.Group controlId="mediaURL">
-            <Form.Label>Media URL</Form.Label>
-            <Form.Control
-                type="text"
-                value={mediaURL}
-                onChange={(e) => setMediaURL(e.target.value)}
-            />
+          <Form.Label>Media URL</Form.Label>
+          <Form.Control
+            type="text"
+            value={mediaURL}
+            onChange={(e) => setMediaURL(e.target.value)}
+          />
         </Form.Group>
         <Form.Group controlId="leadStory">
-            <Form.Label>Lead Story</Form.Label>
-            <Form.Control
-                type="text"
-                value={leadStory}
-                onChange={(e) => setLeadStory(e.target.value)}
-            />
+          <Form.Label>Lead Story</Form.Label>
+          <Form.Control
+            type="text"
+            value={leadStory}
+            onChange={(e) => setLeadStory(e.target.value)}
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
-            Submit
+          Submit
         </Button>
-        </Form>
+      </Form>
     </Container>
-    );
+  );
 }
 
 export default EditArticle;

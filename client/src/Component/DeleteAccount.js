@@ -18,7 +18,7 @@ function DeleteAccount() {
 
         axios
             .post(`http://127.0.0.1:8000/api/delete-account`, {
-                email: cookies.mycookie.name,
+                email: cookies.mycookie.email,
                 password,
             })
             .then((res) => {
@@ -43,7 +43,7 @@ function DeleteAccount() {
                             <Form.Label>Email</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={cookies.mycookie.name}
+                                value={cookies.mycookie.email}
                                 readOnly
                                 plaintext
                                 className="rounded-pill border-dark border-2 my-2"
