@@ -13,8 +13,8 @@
     justify-content: center; /* Horizontally center content */
     align-items: center; /* Vertically center content */
     text-align: center; /* Center text */
-    font-style: italic;
-    font-family: Georgia, serif;
+    font-style: bold;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   .brand-logo img {
@@ -24,7 +24,10 @@
   
   .navbar-dark .navbar-brand {
     color: black;
+    
   }
+
+  
   
   /* .divide{
     font: 56px;
@@ -53,4 +56,50 @@
 
 .search-bar.active {
     bottom: 0;
+}
+
+a.menu-item {
+  color: #faf2e6;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.5em;
+  }
+
+  span.menu-item {
+    color: #faf2e6;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.5em;
+    }
+
+  button.menu-item {
+    font-size: 1.5em;
+    color: #faf2e6;
+    text-decoration: none;
+    }
+
+    div.me-auto.fw-bold.navbar-nav {
+      margin-left: 27%;
+    }
+
+    @media screen and (max-width: 600px) {
+    div.me-auto.fw-bold.navbar-nav {
+     margin-left: 0%;
+    }
+
+    /* span.menu-item {
+      display: none;
+      } */
+  }
+
+  div.dropdown-menu.show {
+    background-color: #212529;
+  }
+
+ a.dropdown-item:hover {
+  background-color: #303438;
+ }
+
+ .navbar-dark .navbar-nav .nav-link {
+  color: #faf2e6;
 }
