@@ -36,10 +36,9 @@ function Login({ cookies, setCookie }) {
 
     return (
         <Container className="my-5">
-            <h1 className="text-center mb-5">The Daily Towner</h1>
+            <h3 className="mb-4 text-center fw-bold">Login</h3>
             <Row className="justify-content-center">
                 <Col md={6}>
-                    <h3 className="mb-4 text-center">Login</h3>
                     <Form onSubmit={handleSubmit} className="p-4">
                         <Form.Group controlId="email">
                             <Form.Label>Email</Form.Label>
@@ -72,7 +71,6 @@ function Login({ cookies, setCookie }) {
                                 style={{
                                     backgroundColor: "#212529",
                                     color: "#FAF2E6",
-                                    border: "2px solid black",
                                     textDecoration: "none",
                                     marginTop: "1rem",
                                 }}

@@ -46,7 +46,7 @@ function AddArticle() {
 
     return (
         <Container className="my-5">
-            <h1 className="text-center mb-5">Add Article</h1>
+            <h3 className="mb-4 text-center fw-bold">Add Article</h3>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formTitle">
                     <Form.Label>Title</Form.Label>

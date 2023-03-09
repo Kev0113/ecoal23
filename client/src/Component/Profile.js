@@ -71,7 +71,7 @@ function Profile() {
 
     return (
         <Container className="my-5">
-            <h1 className="text-center mb-5">Profile</h1>
+            <h3 className="mb-4 text-center fw-bold">Profile</h3>
             <Row className="justify-content-center">
                 <Col md={6}>
                     <Form onSubmit={handleSubmit} className="p-4">
@@ -82,6 +82,7 @@ function Profile() {
                                 name="email"
                                 value={cookies.mycookie.email}
                                 readOnly
+                                className="rounded-pill border-dark border-2 my-2"
                             />
                         </Form.Group>
                         <Form.Group controlId="username">
