@@ -88,4 +88,28 @@ class AuthController extends Controller
         $getUser = User::findOrFail($userId);
         return $getUser;
     }
+
+    public function delete(Request $request, $userId){
+
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|string|min:8',
+        ]);
+
+        if($validator->fails()){
+            return response ("problem", 400)
+                ->header('Content-Type', 'text/plain');
+        }
+
+        $password= $request->input('password');
+
+        $user = User::findOrFail($userId);
+
+        if(password_verify($password, $user["password"])){
+            $user->delete();
+        }else{
+            return "Wrong password";
+        }
+
+
+    }
 }
