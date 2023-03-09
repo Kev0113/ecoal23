@@ -65,18 +65,49 @@ a.menu-item {
   font-size: 1.5em;
   }
 
+  span.menu-item {
+    color: #faf2e6;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.5em;
+    }
+
+  a.menu-item:hover {
+    background-color: #303438;
+    }
+
   button.menu-item {
     font-size: 1.5em;
     color: #faf2e6;
     text-decoration: none;
     }
 
+    button.menu-item:hover {
+      background-color: #303438;
+      }
+
     div.me-auto.fw-bold.navbar-nav {
-      margin-left: 30%;
+      margin-left: 25%;
     }
 
     @media screen and (max-width: 600px) {
     div.me-auto.fw-bold.navbar-nav {
      margin-left: 0%;
     }
+
+    /* span.menu-item {
+      display: none;
+      } */
   }
+
+  div.dropdown-menu.show {
+    background-color: #212529;
+  }
+
+ a.dropdown-item:hover {
+  background-color: #303438;
+ }
+
+ .navbar-dark .navbar-nav .nav-link {
+  color: #faf2e6;
+}

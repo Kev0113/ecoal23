@@ -3,10 +3,10 @@
 // and the body of the page and the footer of the page all using bootstrap
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container, Row, Col, Card } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import logo from "../logo.png";
-import Articles from "./Articles";
+import Article from "./Article";
 
 
 function Home() {
@@ -16,7 +16,7 @@ function Home() {
             <div className="row">
             <div className="col-12">
                     <h3 className="mb-4 text-center fw-bold">Our latest Story:</h3>
-                    {/* <Articles></Articles> */}
+                    <Article></Article>        
             </div>
             </div>
         </div>

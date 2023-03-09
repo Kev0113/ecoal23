@@ -69,19 +69,19 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                             <>
                                 {cookies.mycookie && (
                                     <div style={{ display: "flex", alignItems: "center" }}>
-                                        <span className="menu-item">Welcome, {name}&nbsp;</span>
+                                        <span className="menu-item fw-bold">{name}&nbsp;</span>
                                         <NavDropdown id="nav-dropdown">
                                             <NavDropdown.Item>
-                                                <Link to="/profile" className="menu-item bg-dark">Profile</Link>
+                                                <Link to="/profile" className="menu-item fw-bold">Profile</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/manage-article" className="menu-item bg-dark">Manage Article</Link>
+                                                <Link to="/manage-article" className="menu-item fw-bold">Manage Article</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/add-article" className="menu-item bg-dark">Add New Article</Link>
+                                                <Link to="/add-article" className="menu-item fw-bold">Add New Article</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/contact-us" className="menu-item bg-dark">Contact us</Link>
+                                                <Link to="/contact-us" className="menu-item fw-bold">Contact us</Link>
                                             </NavDropdown.Item>
                                         </NavDropdown>
                                         <span className="divide">|</span>
@@ -110,7 +110,7 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                 </Container>
             </Navbar>
             <br/><br/>
-                <center><h3 className="fst-italic fw-bold">Welcome to The Daily Towner</h3></center>
+                <h3 className="fst-italic fw-bold">Welcome to The Daily Towner</h3>
                 <hr className = "border border-dark border-2 opacity-100"></hr>
         </>
     );

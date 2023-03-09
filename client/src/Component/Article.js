@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col,Button } from "react-bootstrap";
 import axios from "axios";
+import '../css/article.css';
 
 function Article() {
   const { id } = useParams();
@@ -28,14 +29,13 @@ function Article() {
   return (
     <Container className="my-5">
       <Row className="justify-content-center">
-        <Col md={8}>
-          <h1 className="mb-5">{article.title}</h1>
-          <img src={article.mediaURL} alt={article.title} className="img-fluid mb-4" />
+        <Col md={8} id="container">
+          <p className="mb-5" id="title">{article.title}</p>
+          <img src={article.mediaURL} alt={article.title} className="img-fluid mb-4" id="image" />
           <p className="lead">{article.leadStory}</p>
-          <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
+          <div dangerouslySetInnerHTML={{ __html: article.content }} id="content" className = "fw-bold"></div>
+          <Button variant="primary" href="/articles" id="button">Back</Button>
         </Col>
-        {/* make a back button */}
-        <Button variant="primary" href="/articles">Back</Button>
       </Row>
     </Container>
   );
