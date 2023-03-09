@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('mediaType')->nullable();
             $table->string('mediaURL')->nullable();
             $table->boolean('leadStory');
+            $table->string('user_email');
+            $table->integer('validation');
             $table->timestamps();
         });
     }

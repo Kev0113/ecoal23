@@ -16,7 +16,9 @@ class ArticleController extends Controller
             'thumbnailURL' => 'required|string|max:255',
             'mediaType' => 'string|max:255',
             'mediaURL' => 'string|max:255',
-            'leadStory' => 'required|integer|max:1'
+            'leadStory' => 'required|integer|max:1',
+            'user_email' => 'required|email',
+            'validation' => 'required|integer',
         ]);
 
         $article = Article::create([
@@ -26,6 +28,8 @@ class ArticleController extends Controller
             'mediaType' => $request->input('mediaType'),
             'mediaURL' => $request->input('mediaURL'),
             'leadStory' => $request->input('leadStory'),
+            'user_email' => $request->input('user_email'),
+            'validation' => 0,
         ]);
 
         return $article;
@@ -71,5 +75,4 @@ class ArticleController extends Controller
 
         return $article;
     }
-
 }
