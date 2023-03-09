@@ -32,12 +32,24 @@ Route::group([
                          });
 
 //***************************** Add Articles ***************************************
+    Route::post('/articles/add', [ArticleController::class, 'add']);
 
 //*************************** Delete Articles **************************************
     Route::get('/articles/delete/{id}', [ArticleController::class, 'delete']);
 
 //*************************** Edit Articles****************************************
     Route::post('/articles/edit/{id}', [ArticleController::class, 'edit']);
+
+// Edit profile
+    Route::post('/settings/{userId}', [AuthController::class, 'edit']);
+
+// Get user by id
+    Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
+
+//Validate
+    Route::get('/validate', function(){
+        return \App\Models\Article::all()->where('validation', 0);
+    });
 
 });
 
@@ -46,25 +58,10 @@ Route::get('/articles', function() {
     return \App\Models\Article::all()->where('validation', 1);
 });
 
-Route::get('/settings/{id}', [AuthController::class, 'getUser']);
-
-
 // One Articles
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
 });
 
 
-Route::post('/settings/{userId}', [AuthController::class, 'edit']);
 
-Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
-
-
-
-
-
-Route::post('/articles/add', [ArticleController::class, 'add']);
-
-Route::get('/validate', function(){
-    return \App\Models\Article::all()->where('validation', 0);
-});
