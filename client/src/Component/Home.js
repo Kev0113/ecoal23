@@ -16,7 +16,7 @@ function Home() {
             <div className="row">
             <div className="col-12">
                     <h3 className="mb-4 text-center fw-bold">Our latest Story:</h3>
-                    <Article></Article>        
+                    {/* <Article></Article>         */}
             </div>
             </div>
         </div>

@@ -70,8 +70,8 @@ function ManageArticle() {
               <td>{article.mediaType}</td>
               <td>{article.mediaURL}</td>
               <td>{article.leadStory}</td>
-              <td>{article.createdAt}</td>
-              <td>{article.updatedAt}</td>
+              <td>{article.created_at}</td>
+              <td>{article.updated_at}</td>
               <td>
                 <Link to={`/edit-article/${article.id}`}>
                   <Button variant="primary">Edit</Button>
