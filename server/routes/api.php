@@ -40,6 +40,13 @@ Route::group([
 //*************************** Edit Articles****************************************
     Route::post('/articles/edit/{id}', [ArticleController::class, 'edit']);
 
+// Edit profile
+    Route::post('/settings/{userId}', [AuthController::class, 'edit']);
+
+// Get user by id
+    Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
+
+
 //Validate
     Route::get('/validate', function(){
         return \App\Models\Article::all()->where('validation', 0);
@@ -56,9 +63,3 @@ Route::get('/articles', function() {
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
 });
-
-// Edit profile
-Route::post('/settings/{userId}', [AuthController::class, 'edit']);
-
-// Get user by id
-Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
