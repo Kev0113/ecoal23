@@ -103,3 +103,7 @@ a.menu-item {
  .navbar-dark .navbar-nav .nav-link {
   color: #faf2e6;
 }
+
+.brand-logo:hover {
+  color: #303438;
+}

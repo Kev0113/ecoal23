@@ -45,11 +45,11 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
             <Navbar className="brand" variant="dark">
                 <Container className="justify-content-center">
                     <Navbar.Brand className="brand-logo fw-bold" href="/">
-                        <img
+                        {/* <img
                             alt="logo"
                             src={logo}
                             className="d-inline-block align-top"
-                        />{' '}
+                        />{' '} */}
                         The Daily Towner
                     </Navbar.Brand>
                 </Container>
