@@ -60,3 +60,34 @@ p {
   width: 100%;
 }
 
+div.card-body {
+  
+  background-color: #faf2e6;
+  border: 2px solid black;
+  padding: 0%;
+}
+
+button.btn.btn-primary {
+  
+  background-color: #1c1f23;
+  border-color: #1a1e21;
+  margin-bottom: 2%;
+}
+
+div.card {
+  border: none;
+}
+
+div.card-title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+
+div.card-text {
+  padding: 5%;
+  margin-top: 5%;
+}
+

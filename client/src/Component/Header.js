@@ -73,6 +73,9 @@ function Header({ cookies, removeCookie }) {
                     )}
                 </Container>
             </Navbar>
+            <br/><br/>
+                <h3 className="fst-italic fw-bold">Welcome to The Daily Towner</h3>
+                <hr className = "border border-dark border-2 opacity-100"></hr>
         </>
     );
 }
