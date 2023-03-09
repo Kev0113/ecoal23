@@ -26,6 +26,7 @@ function App() {
 
   return (
     <div className="wrapper">
+      <center>
 
       <Header cookies={cookies} removeCookie={removeCookie} handleSearchChange={handleSearchChange} searchTerm={searchTerm} />
 
@@ -44,6 +45,7 @@ function App() {
       </Routes>
 
       <Footer />
+      </center>
     </div>
   );
 }

@@ -40,9 +40,9 @@ function Articles({ searchTerm }) {
           <h3 className="mb-4 text-center">Articles</h3>
           {filteredArticles.map((article) => (
             <Card className="mb-3" key={article.id}>
-              <Card.Img variant="top" src={article.thumbnailURL} />
               <Card.Body>
                 <Card.Title>{article.title}</Card.Title>
+                <Card.Img variant="top" src={article.thumbnailURL} />
                 <Card.Text>{article.content}</Card.Text>
                 <p>Created on: {article.created_at}</p>
                 <Link to={`/articles/${article.id}`}>

@@ -69,23 +69,23 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                             <>
                                 {cookies.mycookie && (
                                     <div style={{ display: "flex", alignItems: "center" }}>
-                                        <span className="nav-link">Welcome, {name}&nbsp;</span>
+                                        <span className="menu-item">Welcome, {name}&nbsp;</span>
                                         <NavDropdown id="nav-dropdown">
                                             <NavDropdown.Item>
-                                                <Link to="/profile" className="nav-link bg-dark">Profile</Link>
+                                                <Link to="/profile" className="menu-item bg-dark">Profile</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/manage-article" className="nav-link bg-dark">Manage Article</Link>
+                                                <Link to="/manage-article" className="menu-item bg-dark">Manage Article</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/add-article" className="nav-link bg-dark">Add New Article</Link>
+                                                <Link to="/add-article" className="menu-item bg-dark">Add New Article</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/contact-us" className="nav-link bg-dark">Contact us</Link>
+                                                <Link to="/contact-us" className="menu-item bg-dark">Contact us</Link>
                                             </NavDropdown.Item>
                                         </NavDropdown>
                                         <span className="divide">|</span>
-                                        <Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link>
+                                        <Link to="/" className="menu-item" onClick={handleLogout}>Logout</Link>
                                     </div>
                                 )}
                             </>
