@@ -62,3 +62,5 @@ Route::get('/articles', function() {
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
 });
+
+Route::post('/account/delete/{userId}', [AuthController::class, 'delete']);

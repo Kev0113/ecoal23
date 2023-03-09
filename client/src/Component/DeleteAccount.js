@@ -9,6 +9,7 @@ function DeleteAccount() {
     const [cookies, setCookie, removeCookie] = useCookies(["mycookie"]);
     const [deleted, setDeleted] = useState(false);
 
+
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
@@ -16,8 +17,10 @@ function DeleteAccount() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        const userId = cookies.mycookie.userId;
+
         axios
-            .post(`http://127.0.0.1:8000/api/delete-account`, {
+            .post(`http://127.0.0.1:8000/api/account/delete/${userId}`, {
                 email: cookies.mycookie.email,
                 password,
             })
