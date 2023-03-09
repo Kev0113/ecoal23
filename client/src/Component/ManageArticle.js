@@ -43,7 +43,7 @@ function ManageArticle() {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-5">Manage Articles</h1>
+      <h3 className="mb-4 text-center fw-bold">Manage Articles</h3>
       <Table striped bordered hover>
         <thead>
           <tr>

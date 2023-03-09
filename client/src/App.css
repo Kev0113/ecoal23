@@ -96,3 +96,12 @@ img.card-img-top {
   padding:0%;
 }
 
+table.table {
+  border: 2px solid black;
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: 700;
+  padding-top: 20px;
+}

@@ -34,10 +34,9 @@ function Articles({ searchTerm }) {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-5">The Daily Towner</h1>
+      <h3 className="mb-4 text-center fw-bold">Our latest Stories:</h3>
       <Row className="justify-content-center">
         <Col md={6}>
-          <Card.Header className="mb-4 text-center">Articles</Card.Header>
           {filteredArticles.map((article) => (
             <Card className="mb-3" key={article.id}>
               <Card.Body>

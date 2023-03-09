@@ -37,10 +37,9 @@ function Register() {
 
     return (
         <Container className="my-5">
-            <h1 className="text-center mb-5">The Daily Towner</h1>
+            <h3 className="mb-4 text-center fw-bold">Register</h3>
             <Row className="justify-content-center">
                 <Col md={6}>
-                    <h3 className="mb-4 text-center">Register</h3>
                     <Form onSubmit={handleSubmit} className="p-4">
                         <Form.Group controlId="name">
                             <Form.Label>Name</Form.Label>
@@ -97,7 +96,6 @@ function Register() {
                                 style={{
                                     backgroundColor: "#212529",
                                     color: "#FAF2E6",
-                                    border: "2px solid black",
                                     textDecoration: "none",
                                     marginTop: "1rem",
                                 }}
