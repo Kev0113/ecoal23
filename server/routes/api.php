@@ -59,4 +59,3 @@ Route::get('/articles/{id}', function($id) {
 Route::post('/settings/{userId}', [AuthController::class, 'edit']);
 
 Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
-
