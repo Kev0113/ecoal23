@@ -29,13 +29,15 @@ class DatabaseSeeder extends Seeder
             'thumbnailURL' => '/ecoal.jpg',
             'mediaType' => 'image',
             'mediaURL' => '/ecoal.jpg',
-            'leadStory' => false
+            'leadStory' => false,
+            'user_email' => "",
+            'validation' => 0,
         ]);
-     
+
         $tag1 = Tag::create(['name' => 'ecoal23']);
         $tag2 = Tag::create(['name' => 'react']);
 
         $article->tags()->attach([$tag1->id, $tag2->id]);
-       
+
     }
 }
