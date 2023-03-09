@@ -43,7 +43,7 @@ Route::group([
 
 // All Articles
 Route::get('/articles', function() {
-    return \App\Models\Article::all()->where('validation', 0);
+    return \App\Models\Article::all()->where('validation', 1);
 });
 
 Route::get('/settings/{id}', [AuthController::class, 'getUser']);
@@ -61,4 +61,10 @@ Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
 
 
 
+
+
 Route::post('/articles/add', [ArticleController::class, 'add']);
+
+Route::get('/validate', function(){
+    return \App\Models\Article::all()->where('validation', 0);
+});
