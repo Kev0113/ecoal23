@@ -62,6 +62,3 @@ Route::get('/articles', function() {
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
 });
-
-
-
