@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FaPhone, FaFax, FaEnvelope } from 'react-icons/fa';
 import { RiFacebookFill, RiTwitterFill, RiInstagramFill, RiLinkedinFill } from 'react-icons/ri';
 
-
 import '../css/footer.css';
 
 function Footer() {
