@@ -24,7 +24,10 @@
   
   .navbar-dark .navbar-brand {
     color: black;
+    
   }
+
+  
   
   /* .divide{
     font: 56px;
@@ -54,3 +57,26 @@
 .search-bar.active {
     bottom: 0;
 }
+
+a.menu-item {
+  color: #faf2e6;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.5em;
+  }
+
+  button.menu-item {
+    font-size: 1.5em;
+    color: #faf2e6;
+    text-decoration: none;
+    }
+
+    div.me-auto.fw-bold.navbar-nav {
+      margin-left: 30%;
+    }
+
+    @media screen and (max-width: 600px) {
+    div.me-auto.fw-bold.navbar-nav {
+     margin-left: 0%;
+    }
+  }

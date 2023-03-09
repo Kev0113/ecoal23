@@ -14,7 +14,7 @@ function Home() {
         <>
         <div className="container">
             <div className="row">
-            <div className="col-12">
+            <div className="col-12"><br/>
                 <h3 className="fst-italic fw-bold">Welcome to The Daily Towner</h3>
                 <hr className = "border border-dark border-2 opacity-100"></hr>
                     <h3 className="mb-4 text-center fw-bold">Our latest Story:</h3>
