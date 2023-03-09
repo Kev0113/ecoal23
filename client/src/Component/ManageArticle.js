@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 function ManageArticle() {
   const [articles, setArticles] = useState([]);
   const [cookies] = useCookies(['mycookie']);
+
+  console.log(cookies.mycookie.userId);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +30,11 @@ function ManageArticle() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/articles/${id}`);
+      const token = cookies.mycookie.token;
+      await axios.get(`http://127.0.0.1:8000/api/articles/delete/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      // await axios.get(`http://127.0.0.1:8000/api/articles/delete/${id}`);
       setArticles(articles.filter(article => article.id !== id));
     } catch (error) {
       console.log(error);

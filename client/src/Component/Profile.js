@@ -54,15 +54,16 @@ function Profile() {
             name: username,
             password: password,
         };
+        const userId = cookies.mycookie.userId;
         axios
-            .post(`http://127.0.0.1:8000/api/update-user`, data, {
+            .post(`http://127.0.0.1:8000/api/settings/${userId}`, data, {
                 headers: {
                     Authorization: `Bearer ${cookies.mycookie.token}`,
                 },
             })
             .then((res) => {
                 console.log(res);
-                setCookie("mycookie", { name: username, token: cookies.mycookie.token }, { path: "/" });
+                setCookie("mycookie", { name: username, token: cookies.mycookie.token , email: cookies.mycookie.email, userId: cookies.mycookie.userId  }, { path: "/" });
                 history.push("/");
             })
             .catch((err) => console.log(err));

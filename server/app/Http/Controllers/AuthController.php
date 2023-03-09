@@ -50,6 +50,8 @@ class AuthController extends Controller
     return response()->json([
         'name' => $user->name,
         'email' => $user->email,
+        'password' => $user->password,
+        'userId' => $user->id,
            'access_token' => $token,
            'token_type' => 'Bearer',
     ]);
@@ -68,8 +70,8 @@ class AuthController extends Controller
 
     public function edit(Request $request, $userId){
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'password' => 'required|string|min:8',
+            'name' => 'string|max:255',
+            // 'password' => 'string|min:8',
         ]);
 
         if($validator->fails()){

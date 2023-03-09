@@ -3,6 +3,7 @@ import { Container, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 function EditArticle({ match }) {
   const [title, setTitle] = useState("");
@@ -14,6 +15,7 @@ function EditArticle({ match }) {
   const [cookies] = useCookies(['mycookie']);
   const { id } = useParams();
   const [user_email, setEmail] = useState(cookies.mycookie.email);
+  const navigate = useNavigate();
 
 
 
@@ -39,6 +41,7 @@ function EditArticle({ match }) {
         }
       );
       console.log(response.data);
+      navigate("/manage-article");
     } catch (error) {
       console.log(error);
     }
