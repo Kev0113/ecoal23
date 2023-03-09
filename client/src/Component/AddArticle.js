@@ -53,6 +53,7 @@ function AddArticle() {
                     <Form.Control
                         type="text"
                         placeholder="Enter title"
+                        className = "rounded border-dark border-2 my-2"
                         value={title}
                         onChange={(event) => setTitle(event.target.value)}
                     />
@@ -64,6 +65,7 @@ function AddArticle() {
                         as="textarea"
                         rows={5}
                         placeholder="Enter content"
+                        className = "rounded border-dark border-2 my-2"
                         value={content}
                         onChange={(event) => setContent(event.target.value)}
                     />
@@ -74,6 +76,7 @@ function AddArticle() {
                     <Form.Control
                         type="text"
                         placeholder="Enter thumbnail URL"
+                        className = "rounded border-dark border-2 my-2"
                         value={thumbnailURL}
                         onChange={(event) => setThumbnailURL(event.target.value)}
                     />
@@ -83,6 +86,7 @@ function AddArticle() {
                     <Form.Label>Media Type</Form.Label>
                     <Form.Control
                         as="select"
+                        className = "rounded border-dark border-2 my-2"
                         value={mediaType}
                         onChange={(event) => setMediaType(event.target.value)}
                     >
@@ -98,15 +102,18 @@ function AddArticle() {
                     <Form.Control
                         type="text"
                         placeholder="Enter media URL"
+                        className = "rounded border-dark border-2 my-2"
                         value={mediaURL}
                         onChange={(event) => setMediaURL(event.target.value)}
                     />
                 </Form.Group>
 
                 <Form.Group controlId="formLeadStory">
-                    <Form.Check
+                    <Form.Label>Lead Story</Form.Label>
+                    <Form.Control
                         type="number"
                         label="Lead Story"
+                        className = "rounded border-dark border-2 my-2"
                         value={leadStory}
                         onChange={(event) => setLeadStory(event.target.value)}
                     />
