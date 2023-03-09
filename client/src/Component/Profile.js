@@ -82,6 +82,7 @@ function Profile() {
                                 name="email"
                                 value={cookies.mycookie.email}
                                 readOnly
+                                className="rounded-pill border-dark border-2 my-2"
                             />
                         </Form.Group>
                         <Form.Group controlId="username">
