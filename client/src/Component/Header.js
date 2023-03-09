@@ -44,7 +44,7 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
         <>
             <Navbar className="brand" variant="dark">
                 <Container className="justify-content-center">
-                    <Navbar.Brand className="brand-logo" href="/">
+                    <Navbar.Brand className="brand-logo fw-bold" href="/">
                         <img
                             alt="logo"
                             src={logo}
@@ -57,43 +57,43 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
 
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Nav className="me-auto">
-                        <Link to="/" className="nav-link">Home</Link>
+                    <Nav className="me-auto fw-bold">
+                        <Link to="/" className="menu-item">Home</Link>
                         <span className="divide">|</span>
-                        <Link to="/articles" className="nav-link">Articles</Link>
+                        <Link to="/articles" className="menu-item">Articles</Link>
                         <span className="divide">|</span>
                         {/* a button to search */}
-                        <button style={{ background: "none", border: "none" }} className="nav-link" onClick={handleSearchClick}>Search</button>
+                        <button style={{background:"none", border: "none"}} className="menu-item fw-bold" onClick={handleSearchClick}>Search</button>
                         <span className="divide">|</span>
                         {isLoggedIn ? (
                             <>
                                 {cookies.mycookie && (
                                     <div style={{ display: "flex", alignItems: "center" }}>
-                                        <span className="nav-link">Welcome, {name}&nbsp;</span>
+                                        <span className="menu-item fw-bold">{name}&nbsp;</span>
                                         <NavDropdown id="nav-dropdown">
                                             <NavDropdown.Item>
-                                                <Link to="/profile" className="nav-link bg-dark">Profile</Link>
+                                                <Link to="/profile" className="menu-item fw-bold">Profile</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/manage-article" className="nav-link bg-dark">Manage Article</Link>
+                                                <Link to="/manage-article" className="menu-item fw-bold">Manage Article</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/add-article" className="nav-link bg-dark">Add New Article</Link>
+                                                <Link to="/add-article" className="menu-item fw-bold">Add New Article</Link>
                                             </NavDropdown.Item>
                                             <NavDropdown.Item>
-                                                <Link to="/contact-us" className="nav-link bg-dark">Contact us</Link>
+                                                <Link to="/contact-us" className="menu-item fw-bold">Contact us</Link>
                                             </NavDropdown.Item>
                                         </NavDropdown>
                                         <span className="divide">|</span>
-                                        <Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link>
+                                        <Link to="/" className="menu-item" onClick={handleLogout}>Logout</Link>
                                     </div>
                                 )}
                             </>
                         ) : (
                             <>
-                                <Link to="/register" className="nav-link">Register</Link>
+                                <Link to="/register" className="menu-item">Register</Link>
                                 <span className="divide">|</span>
-                                <Link to="/login" className="nav-link">Login</Link>
+                                <Link to="/login" className="menu-item">Login</Link>
                             </>
                         )}
                     </Nav>
@@ -109,6 +109,9 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
 
                 </Container>
             </Navbar>
+            <br/><br/>
+                <h3 className="fst-italic fw-bold">Welcome to The Daily Towner</h3>
+                <hr className = "border border-dark border-2 opacity-100"></hr>
         </>
     );
 }
