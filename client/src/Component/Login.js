@@ -23,7 +23,7 @@ function Login({ cookies, setCookie }) {
             .post(`http://127.0.0.1:8000/api/login`, { email, password })
             .then((res) => {
                 console.log(res);
-                setCookie("mycookie", { name: res.data.name, token: res.data.token }, { path: "/" });
+                setCookie("mycookie", { name: res.data.name, token: res.data.token, email: res.data.email }, { path: "/" });
               window.location.replace("/");
             })
             .catch((err) => console.log(err));
