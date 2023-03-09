@@ -110,7 +110,7 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                 </Container>
             </Navbar>
             <br/><br/>
-                <h3 className="fst-italic fw-bold">Welcome to The Daily Towner</h3>
+                <center><h3 className="fst-italic fw-bold">Welcome to The Daily Towner</h3></center>
                 <hr className = "border border-dark border-2 opacity-100"></hr>
         </>
     );
