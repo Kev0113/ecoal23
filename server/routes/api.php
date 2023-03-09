@@ -32,7 +32,6 @@ Route::group([
                          });
 
 //***************************** Add Articles ***************************************
-    Route::post('/articles/add', [ArticleController::class, 'add']);
 
 //*************************** Delete Articles **************************************
     Route::get('/articles/delete/{id}', [ArticleController::class, 'delete']);
@@ -44,7 +43,7 @@ Route::group([
 
 // All Articles
 Route::get('/articles', function() {
-    return \App\Models\Article::all();
+    return \App\Models\Article::all()->where('validation', 0);
 });
 
 Route::get('/settings/{id}', [AuthController::class, 'getUser']);
@@ -59,3 +58,7 @@ Route::get('/articles/{id}', function($id) {
 Route::post('/settings/{userId}', [AuthController::class, 'edit']);
 
 Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
+
+
+
+Route::post('/articles/add', [ArticleController::class, 'add']);
