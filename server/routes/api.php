@@ -40,6 +40,10 @@ Route::group([
 //*************************** Edit Articles****************************************
     Route::post('/articles/edit/{id}', [ArticleController::class, 'edit']);
 
+    Route::post('/settings/{userId}', [AuthController::class, 'edit']);
+
+    Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
+
 });
 
 // All Articles
@@ -54,9 +58,3 @@ Route::get('/settings/{id}', [AuthController::class, 'getUser']);
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
 });
-
-
-Route::post('/settings/{userId}', [AuthController::class, 'edit']);
-
-Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
-
