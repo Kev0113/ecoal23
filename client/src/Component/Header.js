@@ -3,16 +3,33 @@ import { Route, Link, Routes } from "react-router-dom";
 import logo from '../logo.png';
 import '../css/header.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
+import { NavDropdown } from 'react-bootstrap';
+import { BiChevronDown } from 'react-icons/bi';
 import { useCookies } from 'react-cookie';
+import Articles from "./Articles";
 
 import Register from "./Register";
 import Login from "./Login";
 import Home from "./Home";
 
-function Header({ cookies, removeCookie }) {
+function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
     const [isLoggedIn, setIsLoggedIn] = useState(cookies.mycookie !== undefined);
     const [showSearch, setShowSearch] = useState(false);
+
+
+
     const name = cookies.mycookie ? cookies.mycookie.name : null;
+
+    // const handleSearchChange = (event) => {
+    //     setSearchTerm(event.target.value);
+    // };
+
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        // Do something with the search term, e.g. redirect to a search results page
+    };
+
+
 
     const handleSearchClick = () => {
         setShowSearch(!showSearch);
@@ -51,11 +68,25 @@ function Header({ cookies, removeCookie }) {
                         {isLoggedIn ? (
                             <>
                                 {cookies.mycookie && (
-                                    <>
-                                        <span className="menu-item">Welcome, {name}</span>
+                                    <div style={{ display: "flex", alignItems: "center" }}>
+                                        <span className="nav-link">Welcome, {name}&nbsp;</span>
+                                        <NavDropdown id="nav-dropdown">
+                                            <NavDropdown.Item>
+                                                <Link to="/profile" className="nav-link bg-dark">Profile</Link>
+                                            </NavDropdown.Item>
+                                            <NavDropdown.Item>
+                                                <Link to="/manage-article" className="nav-link bg-dark">Manage Article</Link>
+                                            </NavDropdown.Item>
+                                            <NavDropdown.Item>
+                                                <Link to="/add-article" className="nav-link bg-dark">Add New Article</Link>
+                                            </NavDropdown.Item>
+                                            <NavDropdown.Item>
+                                                <Link to="/contact-us" className="nav-link bg-dark">Contact us</Link>
+                                            </NavDropdown.Item>
+                                        </NavDropdown>
                                         <span className="divide">|</span>
-                                        <Link to="/" className="menu-item" onClick={handleLogout}>Logout</Link>
-                                    </>
+                                        <Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link>
+                                    </div>
                                 )}
                             </>
                         ) : (
@@ -68,9 +99,14 @@ function Header({ cookies, removeCookie }) {
                     </Nav>
                     {showSearch && (
                         <div className="search-bar">
-                            <input type="text" placeholder="Search..." />
+                            <form onSubmit={handleSearchSubmit}>
+                                <input type="text" placeholder="Search Articles Here......" value={searchTerm} onChange={handleSearchChange} />
+
+                                <button type="submit">Search</button>
+                            </form>
                         </div>
                     )}
+
                 </Container>
             </Navbar>
             <br/><br/>
