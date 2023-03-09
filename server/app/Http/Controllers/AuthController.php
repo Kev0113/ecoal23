@@ -64,7 +64,6 @@ class AuthController extends Controller
     public function edit(Request $request, $userId){
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
         ]);
 
@@ -77,9 +76,6 @@ class AuthController extends Controller
 
         if($request->input('title') == ! NULL ){
             $user->name = $request->input('name');
-        }
-        if($request->input('email') == ! NULL ){
-            $user->email = $request->input('email');
         }
         if($request->input('password') == ! NULL ){
             $user->password = Hash::make($request->input('password'));
