@@ -128,3 +128,11 @@ input[type=search]
   max-width: 200px;
   overflow: hidden;
 }
+
+.passwordSpan {
+  display: inline-flex;
+}
+
+.passwordSpan > p {
+  padding-right: 10px;
+}
