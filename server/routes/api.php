@@ -61,4 +61,15 @@ Route::get('/articles', function() {
 // One Articles
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
+;
+});
+
+// All articles for a tag
+Route::get('/tags/{tagId}', function($tagId){
+    $articles = DB::table('articles')                 //get all the articles of a tag
+        ->join('article_tag', 'articles.id', '=', 'article_tag.article_id')
+        ->where('article_tag.tag_id', $tagId)
+        ->get();
+
+    return $articles;
 });
