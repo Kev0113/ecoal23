@@ -38,7 +38,7 @@ function DeleteAccount() {
 
     return (
         <Container className="my-5">
-            <h1 className="text-center mb-5">Delete Account</h1>
+            <h3 className="mb-4 text-center fw-bold">Delete Account</h3>
             <Row className="justify-content-center">
                 <Col md={6}>
                     <Form onSubmit={handleSubmit} className="p-4">
@@ -68,7 +68,7 @@ function DeleteAccount() {
                             <Button
                                 type="submit"
                                 className="px-5 py-2"
-                                variant="dark"
+                                variant="danger"
                                 style={{ color: "#FAF2E6", marginTop: "1rem" }}
                             >
                                 Delete Account

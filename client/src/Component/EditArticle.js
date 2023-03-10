@@ -68,12 +68,13 @@ function EditArticle({ match }) {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-5">Edit Article</h1>
+      <h3 className="mb-4 text-center fw-bold">Edit Article</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="title">
           <Form.Label>Title</Form.Label>
           <Form.Control
             type="text"
+            className="rounded border-dark border-2 my-2"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -82,6 +83,7 @@ function EditArticle({ match }) {
           <Form.Label>Content</Form.Label>
           <Form.Control
             as="textarea"
+            className="rounded border-dark border-2 my-2"
             rows={5}
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -91,6 +93,7 @@ function EditArticle({ match }) {
           <Form.Label>Thumbnail URL</Form.Label>
           <Form.Control
             type="text"
+            className="rounded border-dark border-2 my-2"
             value={thumbnailURL}
             onChange={(e) => setThumbnailURL(e.target.value)}
           />
@@ -99,6 +102,7 @@ function EditArticle({ match }) {
           <Form.Label>Media Type</Form.Label>
           <Form.Control
             type="text"
+            className="rounded border-dark border-2 my-2"
             value={mediaType}
             onChange={(e) => setMediaType(e.target.value)}
           />
@@ -107,6 +111,7 @@ function EditArticle({ match }) {
           <Form.Label>Media URL</Form.Label>
           <Form.Control
             type="text"
+            className="rounded border-dark border-2 my-2"
             value={mediaURL}
             onChange={(e) => setMediaURL(e.target.value)}
           />
@@ -115,6 +120,7 @@ function EditArticle({ match }) {
           <Form.Label>Lead Story</Form.Label>
           <Form.Control
             type="text"
+            className="rounded border-dark border-2 my-2"
             value={leadStory}
             onChange={(e) => setLeadStory(e.target.value)}
           />

@@ -47,10 +47,9 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                     <Navbar.Brand className="brand-logo fw-bold" href="/">
                         <img
                             alt="logo"
-                            src={logo}
+                            src={"./logo2.png"}
                             className="d-inline-block align-top"
                         />{' '}
-                        The Daily Towner
                     </Navbar.Brand>
                 </Container>
             </Navbar>
@@ -80,9 +79,6 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                                             <NavDropdown.Item>
                                                 <Link to="/add-article" className="menu-item fw-bold">Add New Article</Link>
                                             </NavDropdown.Item>
-                                            <NavDropdown.Item>
-                                                <Link to="/contact-us" className="menu-item fw-bold">Contact us</Link>
-                                            </NavDropdown.Item>
                                         </NavDropdown>
                                         <span className="divide">|</span>
                                         <Link to="/" className="menu-item" onClick={handleLogout}>Logout</Link>
@@ -100,9 +96,7 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                     {showSearch && (
                         <div className="search-bar">
                             <form onSubmit={handleSearchSubmit}>
-                                <input type="text" placeholder="Search Articles Here......" value={searchTerm} onChange={handleSearchChange} />
-
-                                <button type="submit">Search</button>
+                                <input type="search" placeholder="Search Articles Here......" value={searchTerm} onChange={handleSearchChange} />
                             </form>
                         </div>
                     )}

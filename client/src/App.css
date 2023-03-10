@@ -37,6 +37,16 @@
   }
 } */
 
+@font-face {
+  font-family: Mugglenews;
+  src: url("fonts/Mugglenews.ttf");
+}
+
+@font-face {
+  font-family: OldNewspaperTypes;
+  src: url("fonts/OldNewspaperTypes.ttf");
+}
+
 * {
   font-family: 'Times New Roman', Times, serif;
 }
@@ -88,7 +98,6 @@ div.card-title {
 
 p.card-text {
   padding: 5%;
-  margin-top: 5%;
   border-top: 2px solid black;
 }
 
@@ -104,4 +113,40 @@ label {
   font-size: 1.2em;
   font-weight: 700;
   padding-top: 20px;
+}
+
+/*https://stackoverflow.com/questions/57011736/how-to-get-rid-of-the-x-on-the-search-bar*/
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+input[type=search] 
+{
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border-radius: 50rem!important;
+    border: 2px solid black;
+    background: url("./logo.png") top right     no-repeat;
+height:30px;
+padding-left:25px;
+}
+
+.manageArticleData {
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.passwordSpan {
+  display: inline-flex;
+}
+
+.passwordSpan > p {
+  padding-right: 10px;
 }

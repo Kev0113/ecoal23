@@ -63,15 +63,15 @@ function ManageArticle() {
         <tbody>
           {filteredArticles.map((article) => (
             <tr key={article.id}>
-              <td>{article.id}</td>
-              <td>{article.title}</td>
-              <td>{article.content}</td>
-              <td>{article.thumbnailURL}</td>
-              <td>{article.mediaType}</td>
-              <td>{article.mediaURL}</td>
-              <td>{article.leadStory}</td>
-              <td>{article.created_at}</td>
-              <td>{article.updated_at}</td>
+              <td className = "manageArticleData">{article.id}</td>
+              <td className = "manageArticleData">{article.title}</td>
+              <td className = "manageArticleData">{article.content}</td>
+              <td className = "manageArticleData">{article.thumbnailURL}</td>
+              <td className = "manageArticleData">{article.mediaType}</td>
+              <td className = "manageArticleData">{article.mediaURL}</td>
+              <td className = "manageArticleData">{article.leadStory}</td>
+              <td className = "manageArticleData">{article.created_at}</td>
+              <td className = "manageArticleData">{article.updated_at}</td>
               <td>
                 <Link to={`/edit-article/${article.id}`}>
                   <Button variant="primary">Edit</Button>

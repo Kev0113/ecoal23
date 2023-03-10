@@ -87,25 +87,7 @@ function Profile() {
                         </Form.Group>
                         <Form.Group controlId="username">
                             <Form.Label>Username</Form.Label>
-                            <div className="input-group">
-                                {isEditable ? (
-                                    <Form.Control
-                                        type="text"
-                                        value={username}
-                                        onChange={handleUsernameChange}
-                                        autoComplete="off"
-                                        className="rounded-pill border-dark border-2 my-2"
-                                    />
-                                ) : (
-                                    <Form.Control
-                                        type="text"
-                                        value={username}
-                                        readOnly
-                                        plaintext
-                                        className="rounded-pill border-dark border-2 my-2"
-                                    />
-                                )}
-                                <div className="input-group-append">
+                            <div className="input-group-append">
                                     {isEditable ? (
                                         <Button
                                             type="button"
@@ -124,14 +106,32 @@ function Profile() {
                                         </Button>
                                     )}
                                 </div>
+                            <div className="input-group">
+                                {isEditable ? (
+                                    <Form.Control
+                                        type="text"
+                                        value={username}
+                                        onChange={handleUsernameChange}
+                                        autoComplete="off"
+                                        className="rounded-pill border-dark border-2 my-2"
+                                    />
+                                ) : (
+                                    <Form.Control
+                                        type="text"
+                                        value={username}
+                                        readOnly
+                                        plaintext
+                                        className="rounded-pill border-dark border-2 my-2"
+                                    />
+                                )}
                             </div>
-                        </Form.Group>
+                        </Form.Group><br></br>
                         <Form.Group controlId="updatePassword">
+                        <span className="passwordSpan"><p>Do you want to update password?</p>
                             <Form.Check
                                 type="checkbox"
-                                label="Do you want to update password?"
                                 onChange={handleUpdatePasswordChange}
-                            />
+                            /></span>
                         </Form.Group>
                         {updatePassword && (
                             <>
@@ -168,7 +168,8 @@ function Profile() {
             </Row>
 
             {/* add a delete account message that takes you to the component */}
-            <Link to="/delete-account">Delete Account</Link>
+            
+            <Link to="/delete-account" className="btn btn-danger">Delete Account</Link>
         </Container>
     );
 }
