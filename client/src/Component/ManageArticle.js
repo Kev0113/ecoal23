@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { Container, Table, Button } from "react-bootstrap";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function ManageArticle() {
   const [articles, setArticles] = useState([]);
   const [cookies] = useCookies(['mycookie']);
+
+  console.log(cookies.mycookie.userId);
   
   useEffect(() => {
     const fetchData = async () => {
@@ -22,12 +25,16 @@ function ManageArticle() {
   }, []);
 
   const filteredArticles = articles.filter(article => {
-    return article.email === cookies.mycookie.email;
+    return article.user_email === cookies.mycookie.email;
   });
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/articles/${id}`);
+      const token = cookies.mycookie.token;
+      await axios.get(`http://127.0.0.1:8000/api/articles/delete/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      // await axios.get(`http://127.0.0.1:8000/api/articles/delete/${id}`);
       setArticles(articles.filter(article => article.id !== id));
     } catch (error) {
       console.log(error);
@@ -36,7 +43,7 @@ function ManageArticle() {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-5">Manage Articles</h1>
+      <h3 className="mb-4 text-center fw-bold">Manage Articles</h3>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -63,12 +70,12 @@ function ManageArticle() {
               <td>{article.mediaType}</td>
               <td>{article.mediaURL}</td>
               <td>{article.leadStory}</td>
-              <td>{article.createdAt}</td>
-              <td>{article.updatedAt}</td>
+              <td>{article.created_at}</td>
+              <td>{article.updated_at}</td>
               <td>
-                <Button variant="primary" href={`/edit/${article.id}`}>
-                  Edit
-                </Button>
+                <Link to={`/edit-article/${article.id}`}>
+                  <Button variant="primary">Edit</Button>
+                </Link>
               </td>
               <td>
                 <Button

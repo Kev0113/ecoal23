@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             'leadStory' => false,
             'user_email' => "",
             'validation' => 0,
+            'tags' => "",
         ]);
 
         $tag1 = Tag::create(['name' => 'ecoal23']);

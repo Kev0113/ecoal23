@@ -34,17 +34,16 @@ function Articles({ searchTerm }) {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-5">The Daily Towner</h1>
+      <h3 className="mb-4 text-center fw-bold">Our latest Stories:</h3>
       <Row className="justify-content-center">
         <Col md={6}>
-          <h3 className="mb-4 text-center">Articles</h3>
           {filteredArticles.map((article) => (
             <Card className="mb-3" key={article.id}>
               <Card.Body>
                 <Card.Title>{article.title}</Card.Title>
                 <Card.Img variant="top" src={article.thumbnailURL} />
                 <Card.Text>{article.content}</Card.Text>
-                <p>Created on: {article.created_at}</p>
+                <Card.Text>Created on: {article.created_at}</Card.Text>
                 <Link to={`/articles/${article.id}`}>
                   <Button variant="primary">Read More</Button>
                 </Link>

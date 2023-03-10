@@ -47,20 +47,19 @@ class AuthController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
-<<<<<<< HEAD
     return response()->json([
         'name' => $user->name,
         'email' => $user->email,
+        'password' => $user->password,
+        'userId' => $user->id,
            'access_token' => $token,
            'token_type' => 'Bearer',
     ]);
-=======
         return response()->json([
             'name' => $user->name,
                'access_token' => $token,
                'token_type' => 'Bearer',
         ]);
->>>>>>> c390aeac21fc2545c623a5347fc8117dfa0fbecb
     }
 
     public function logout(Request $request) {
@@ -71,8 +70,8 @@ class AuthController extends Controller
 
     public function edit(Request $request, $userId){
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'password' => 'required|string|min:8',
+            'name' => 'string|max:255',
+            // 'password' => 'string|min:8',
         ]);
 
         if($validator->fails()){

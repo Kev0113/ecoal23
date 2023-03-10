@@ -18,7 +18,7 @@ class ArticleController extends Controller
             'mediaURL' => 'string|max:255',
             'leadStory' => 'required|integer|max:1',
             'user_email' => 'required|email',
-            'validation' => 'required|integer',
+            'validation' => 'integer',
         ]);
 
         $article = Article::create([
