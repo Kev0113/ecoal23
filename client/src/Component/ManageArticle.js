@@ -49,7 +49,7 @@ function ManageArticle() {
           <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Content</th>
+            {/* <th>Content</th> */}
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -59,7 +59,7 @@ function ManageArticle() {
             <tr key={article.id}>
               <td className = "manageArticleData">{article.id}</td>
               <td className = "manageArticleData">{article.title}</td>
-              <td className = "manageArticleData">{article.content}</td>
+              {/* <td className = "manageArticleData">{article.content}</td> */}
               <td>
                 <Link to={`/edit-article/${article.id}`}>
                   <Button variant="primary">Edit</Button>

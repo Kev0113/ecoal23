@@ -163,6 +163,7 @@ function Articles({ searchTerm }) {
                 {" "}
                 Date{" "}
               </Button>
+              &nbsp;
               <Button
                 variant="primary"
                 className={`text-${sortBy === "title" ? "primary" : "secondary"}`}
@@ -195,6 +196,9 @@ function Articles({ searchTerm }) {
                 </Col>
               </Row>
               <Row noGutters className="mb-5">
+              <Col xs={12} md={4} className="bg-dark text-light p-3">
+                  <img src={filteredArticles[currentArticleIndex].mediaURL} alt={filteredArticles[currentArticleIndex].title} className="img-fluid mb-4" />
+                </Col>
                 <Col xs={12} md={8} className="p-3">
                   <h2 className="h1">
                     {filteredArticles[currentArticleIndex].title}
@@ -211,9 +215,7 @@ function Articles({ searchTerm }) {
                     <p className="font-italic mb-0">By {filteredArticles[currentArticleIndex].author} - {filteredArticles[currentArticleIndex].created_at}</p>
                   </div>
                 </Col>
-                <Col xs={12} md={4} className="bg-dark text-light p-3">
-                  <img src={filteredArticles[currentArticleIndex].mediaURL} alt={filteredArticles[currentArticleIndex].title} className="img-fluid mb-4" />
-                </Col>
+                
               </Row>
             </Container>
           ) : (

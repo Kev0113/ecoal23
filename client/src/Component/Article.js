@@ -38,6 +38,9 @@ function Article() {
             <Button variant="primary">Back</Button>
           </Link>
         </Col>
+        <Col xs={12} md={4} className="bg-dark text-light p-3">
+          <img src={article.mediaURL} alt={article.title} className="img-fluid mb-4" />
+        </Col>
       </Row>
       <Row noGutters className="mb-5">
         <Col xs={12} md={8} className="p-3">
@@ -48,9 +51,7 @@ function Article() {
             <p className="font-italic mb-0">By {article.author} - {article.created_at}</p>
           </div>
         </Col>
-        <Col xs={12} md={4} className="bg-dark text-light p-3">
-          <img src={article.mediaURL} alt={article.title} className="img-fluid mb-4" />
-        </Col>
+       
       </Row>
     </Container>
   );
