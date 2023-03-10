@@ -139,7 +139,7 @@ padding-left:25px;
 }
 
 .manageArticleData {
-  max-width: 200px;
+  max-width: 100px;
   overflow: hidden;
 }
 
@@ -150,3 +150,10 @@ padding-left:25px;
 .passwordSpan > p {
   padding-right: 10px;
 }
+
+button.btn.btn-primary {
+  margin-left: 35%;
+}
+
+
+

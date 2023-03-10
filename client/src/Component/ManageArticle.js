@@ -50,12 +50,6 @@ function ManageArticle() {
             <th>ID</th>
             <th>Title</th>
             <th>Content</th>
-            <th>Thumbnail URL</th>
-            <th>Media Type</th>
-            <th>Media URL</th>
-            <th>Lead Story</th>
-            <th>Created At</th>
-            <th>Updated At</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -66,12 +60,6 @@ function ManageArticle() {
               <td className = "manageArticleData">{article.id}</td>
               <td className = "manageArticleData">{article.title}</td>
               <td className = "manageArticleData">{article.content}</td>
-              <td className = "manageArticleData">{article.thumbnailURL}</td>
-              <td className = "manageArticleData">{article.mediaType}</td>
-              <td className = "manageArticleData">{article.mediaURL}</td>
-              <td className = "manageArticleData">{article.leadStory}</td>
-              <td className = "manageArticleData">{article.created_at}</td>
-              <td className = "manageArticleData">{article.updated_at}</td>
               <td>
                 <Link to={`/edit-article/${article.id}`}>
                   <Button variant="primary">Edit</Button>
