@@ -115,6 +115,7 @@ label {
   padding-top: 20px;
 }
 
+/*https://stackoverflow.com/questions/57011736/how-to-get-rid-of-the-x-on-the-search-bar*/
 /* clears the 'X' from Internet Explorer */
 input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
