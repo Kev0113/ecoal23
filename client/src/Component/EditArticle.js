@@ -68,7 +68,7 @@ function EditArticle({ match }) {
 
   return (
     <Container className="my-5">
-      <h1 className="text-center mb-5">Edit Article</h1>
+      <h3 className="mb-4 text-center fw-bold">Edit Article</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="title">
           <Form.Label>Title</Form.Label>
