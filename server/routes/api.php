@@ -31,7 +31,7 @@ Route::group([
                                 return $request->user();
                          });
 
-//***************************** Add Articles ***************************************
+//***************************** Add Articles **************************************
     Route::post('/articles/add', [ArticleController::class, 'add']);
 
 //*************************** Delete Articles **************************************
@@ -45,6 +45,7 @@ Route::group([
 
 // Get user by id
     Route::get('/settings/{userId}', [AuthController::class, 'getUser']);
+
 
 //Validate
     Route::get('/validate', function(){
@@ -61,7 +62,6 @@ Route::get('/articles', function() {
 // One Articles
 Route::get('/articles/{id}', function($id) {
     return \App\Models\Article::FindOrFail($id);
-;
 });
 
 // All articles for a tag
