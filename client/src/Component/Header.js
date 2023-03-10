@@ -100,9 +100,7 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                     {showSearch && (
                         <div className="search-bar">
                             <form onSubmit={handleSearchSubmit}>
-                                <input type="text" placeholder="Search Articles Here......" value={searchTerm} onChange={handleSearchChange} />
-
-                                <button type="submit">Search</button>
+                                <input type="search" placeholder="Search Articles Here......" value={searchTerm} onChange={handleSearchChange} />
                             </form>
                         </div>
                     )}

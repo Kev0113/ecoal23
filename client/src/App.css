@@ -114,3 +114,13 @@ label {
   font-weight: 700;
   padding-top: 20px;
 }
+
+input[type=search] 
+{
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border-radius: 50rem!important;
+    border: 2px solid black;
+}
+
