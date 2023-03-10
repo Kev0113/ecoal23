@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('leadStory');
             $table->string('user_email');
             $table->integer('validation');
+            $table->string('tags');
             $table->timestamps();
         });
     }

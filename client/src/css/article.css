@@ -1,49 +1,76 @@
+/* Remove #container styles */
 #container {
-  
-    background-color: #faf2e6;
-    border: 2px solid black;
-    padding: 0%;
-  }
-  
-  #button {
-    
-    background-color: #1c1f23;
-    border-color: #1a1e21;
-    margin-bottom: 2%;
-  }
-  
-  div.card {
-    border: none;
-  }
-  
-  #title {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    border-bottom: 2px solid black;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    font-size: 2em;
-  }
-  
-  #content {
-    padding: 5%;
-    margin-top: 5%;
-    border-top: 2px solid black;
-  }
+  padding: 50px 15px;
+}
 
-  #content > h1 {
-    font-size:x-large;
-    font-weight: 700;
-  }
+/* Add new styles for #newspaper-container */
+#newspaper-container {
+  background-color: #f8f8f8;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-  #content > p {
-    font-size: 1.5em;
-  }
-  
-  #image {
-    padding:0%;
-  }
+/* Add new styles for #newspaper-content */
+#newspaper-content {
+  padding: 50px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
-  .lead {
-      display: none;
-      
-  }
+/* Add new styles for #newspaper-header */
+#newspaper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add new styles for #newspaper-article-title */
+#newspaper-article-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Add new styles for #newspaper-image */
+#newspaper-image {
+  position: relative;
+  height: 400px;
+  margin-left: 20px;
+}
+
+/* Add new styles for #newspaper-image img */
+#newspaper-image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Update #content-wrapper styles */
+#content-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+/* Add new styles for #newspaper-content-body */
+#newspaper-content-body {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+/* Add new styles for #newspaper-author */
+#newspaper-author {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* Add new styles for #newspaper-title */
+#newspaper-title {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/* Add new styles for #article-title */
+#article-title {
+  display: none;
+}

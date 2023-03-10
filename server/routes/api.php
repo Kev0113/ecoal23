@@ -64,3 +64,12 @@ Route::get('/articles/{id}', function($id) {
 });
 
 Route::post('/account/delete/{userId}', [AuthController::class, 'delete']);
+
+Route::get('/tags/{tagId}', function($tagId){
+    $articles = DB::table('articles')                 //get all the articles of a tag
+        ->join('article_tag', 'articles.id', '=', 'article_tag.article_id')
+        ->where('article_tag.tag_id', $tagId)
+        ->get();
+
+    return $articles;
+});
