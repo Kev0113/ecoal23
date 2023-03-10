@@ -79,7 +79,7 @@ a.menu-item {
     }
 
     div.me-auto.fw-bold.navbar-nav {
-      margin-left: 27%;
+      margin-left: 25%;
     }
 
     @media screen and (max-width: 600px) {
@@ -87,9 +87,32 @@ a.menu-item {
      margin-left: 0%;
     }
 
-    /* span.menu-item {
+    span.menu-item {
       display: none;
-      } */
+      } 
+
+    
+  }
+
+  @media screen and (max-width: 400px) {
+
+    div.container {
+      padding: 0%;
+    }
+    nav.navbar {
+      
+      overflow: hidden;
+      padding-left: 0%;
+    }
+    button.menu-item {
+      padding: 2%;
+    }
+    a.menu-item {
+      padding: 2%;
+    }
+
+
+    
   }
 
   div.dropdown-menu.show {
