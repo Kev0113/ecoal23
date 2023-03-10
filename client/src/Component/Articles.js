@@ -112,20 +112,22 @@ function Articles({ searchTerm }) {
       <h3 className="mb-4 text-center fw-bold">Our latest Stories:</h3>
       <Row className="justify-content-center">
         <Col md={3}>
+        
           <Form>
+          <span className="passwordSpan">
             {tags.map((tag) => (
-              <Form.Check
+              <label><Form.Check
                 key={tag}
                 type="checkbox"
-                label={tag}
                 checked={tags.includes(tag)}
                 onChange={() => handleTagChange(tag)}
-              />
+              />{tag}</label>
             ))}
+            </span>
           </Form>
-          <Button variant="link" onClick={() => setTags(allTags)}>
+          <Button variant="dark" className="align-items-center text-center" onClick={() => setTags(allTags)}><br></br>
   Show all articles
-</Button>
+</Button><br></br>
         </Col>
         <Col md={6}>
           {filteredArticles.length === 0 ? (
@@ -150,10 +152,10 @@ function Articles({ searchTerm }) {
             </div>
           )}
           <div className="d-flex justify-content-between align-items-center mb-3">
-            <div>Sort by:</div>
+            <p>Sort by:</p>
             <div>
               <Button
-                variant="link"
+                variant="primary"
                 className={`text-${sortBy === "created_at" ? "primary" : "secondary"}`}
                 onClick={() => handleSortClick("created_at")}
               >
@@ -161,7 +163,7 @@ function Articles({ searchTerm }) {
                 Date{" "}
               </Button>
               <Button
-                variant="link"
+                variant="primary"
                 className={`text-${sortBy === "title" ? "primary" : "secondary"}`}
                 onClick={() => handleSortClick("title")}
               >
