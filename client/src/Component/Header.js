@@ -79,9 +79,6 @@ function Header({ cookies, removeCookie, handleSearchChange, searchTerm }) {
                                             <NavDropdown.Item>
                                                 <Link to="/add-article" className="menu-item fw-bold">Add New Article</Link>
                                             </NavDropdown.Item>
-                                            <NavDropdown.Item>
-                                                <Link to="/contact-us" className="menu-item fw-bold">Contact us</Link>
-                                            </NavDropdown.Item>
                                         </NavDropdown>
                                         <span className="divide">|</span>
                                         <Link to="/" className="menu-item" onClick={handleLogout}>Logout</Link>
