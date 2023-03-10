@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import '../css/articles.css';
 import axios from "axios";
 
 function Articles({ searchTerm }) {
