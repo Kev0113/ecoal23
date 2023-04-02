@@ -17,9 +17,9 @@ The user interface will contain several pages including a home page, search page
 ### Running the Application:
 To run the Daily Towner Newspaper App, each team member is invited to clone the Git project and install the required packages for the client and server parts. To start the application, follow these steps:
 
-- Install required packages for the client part with ** npm install ** in the dedicated directory.
-- Install required packages and the database in the server part. Go to the dedicated directory of this part of the project and run ** php composer.phar install ** and ** php artisan migrate --seed **.
-- To run the application, type in different terminal tabs: ** cd server; php artisan serve ** and ** cd client; npm start **
+- Install required packages for the client part with **npm install** in the dedicated directory.
+- Install required packages and the database in the server part. Go to the dedicated directory of this part of the project and run **php composer.phar install** and **php artisan migrate --seed**.
+- To run the application, type in different terminal tabs: **cd server; php artisan serve** and **cd client; npm start**
 - Check your server application at localhost:8000 using your browser or a dedicated tool like Postman.
 - Check your client application at localhost:3000.
 We hope you enjoy using the Daily Towner Newspaper App. If you have any questions, feedback or suggestions, please don't hesitate to contact us.
